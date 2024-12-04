@@ -21,3 +21,14 @@ const winningConditions = [
     [2, 4, 6]
 ]; // Array of winning combinations
 
+
+function handleCellClick(cell) {
+    // Check if the cell is empty and the game is active
+    if (cell.textContent === '' && gameActive) {
+        cell.textContent = currentPlayer; // Set the cell's content to the current player's symbol
+        checkWin(); // Check for a win or tie
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; // Switch the current player
+        turnTracker.textContent = currentPlayer; // Update the turn tracker
+    }
+}
+
