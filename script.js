@@ -66,3 +66,18 @@ function checkWin() {
         }, 1000);
     }
 }
+
+function resetBoard() {
+    gameActive = true; // Set the game to active
+    currentPlayer = 'X'; // Set the current player to X
+    turnTracker.textContent = currentPlayer; // Update the turn tracker
+    squares.forEach(square => {
+        square.textContent = ''; // Clear the content of each square
+    });
+}
+
+playAgainButton.addEventListener('click', resetBoard); // Add a click event listener to the "Play Again" button
+
+squares.forEach(square => {
+    square.addEventListener('click', () => handleCellClick(square)); // Add a click event listener to each square
+});
