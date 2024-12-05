@@ -81,3 +81,5 @@ playAgainButton.addEventListener('click', resetBoard); // Add a click event list
 squares.forEach(square => {
     square.addEventListener('click', () => handleCellClick(square)); // Add a click event listener to each square
 });
+
+localStorage.setItem('currentPlayer', currentPlayer);
